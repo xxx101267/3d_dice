@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		ul,li{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+			.shaizi{
+				width:196px;
+				margin: 150px auto;
+				perspective: 1000px;
+			}
+			.box{
+				transform-style: preserve-3d;
+				width:196px;
+				height:196px;
+				position: relative;
+				/*transition: 20s;*/
+				transform-origin: center center -98px;
+				animation: turn 1000s infinite linear;
+			}
+			.box li{
+				width:196px;
+				height:196px;
+				font-size: 50px;
+				text-align: center;
+				line-height: 196px;
+				color: yellow;
+				position: absolute;
+				top:0;
+				left:0;
+				background: url(img/shaizi_bj.jpg) no-repeat;
+			}
+			.box li:nth-of-type(1){
+				background-position:-392px -392px ;
+				transform-origin: left;
+				transform: rotateY(90deg);
+			}
+			.box li:nth-of-type(2){
+				background-position:0px -196px ;
+				transform-origin: right;
+				transform: rotateY(-90deg);
+			}
+			.box li:nth-of-type(3){
+				background-position:-196px -196px ;
+				transform-origin: top;
+				transform: rotateX(-90deg);
+			}
+			.box li:nth-of-type(4){
+				background-position:-392px -196px ;
+				transform-origin: bottom;
+				transform: rotateX(90deg);
+			}
+			.box li:nth-of-type(5){
+				background-position:-588px -196px ;
+				transform: translateZ(-196px);
+			}
+			.box li:nth-of-type(6){
+				background-position:-392px 0px ;
+				transform: translateZ(0px);
+			}
+			/*.shaizi:hover .box{
+				transform: rotate3d(1,1,1,1800deg);
+			}*/
+			@keyframes turn{
+				from{
+					transform: rotateY(0deg) rotateX(0deg);
+				}
+				to{
+					transform: rotateY(100000deg) rotateX(100000deg);
+				}
+			}
+		</style>
+	</head>
+	<body style="background-color: #636060;">
+
+		<div class="shaizi">
+			<ul class="box">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		
+	</body>
+</html>
